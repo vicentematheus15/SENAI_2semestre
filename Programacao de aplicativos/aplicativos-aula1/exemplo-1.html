@@ -1,17 +1,63 @@
-<h1>Calculadora</h1>
-
-<input type="text" id="n1">
-<input type="text" id="n2">
-
-<button onclick="calcular()">
-    Calcular
-</button>
-
-<script>
-    function calcular() {
-        let numero1 = document.getElementById("n1").value
-        let numero2 = document.getElementById("n2").value
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
     
+    <input type="text" id="n1" placeholder="Digite n1">
+    <input type="text" id="n2" placeholder="Digite n2">
+    
+    <br><br>
+    
+    <button onclick="Somar()">
+        Somar
+    </button>
+    
+    <button onclick="Subtrair()">
+        Subtrair
+    </button>
+    
+    <button onclick="Multiplicar()">
+        Multiplicar
+    </button>
+    
+    <button onclick="Dividir()">
+        Dividir
+    </button>
+    
+    <script>
+        
+    function Somar() {
+        let numero1 = Number(document.getElementById("n1").value)
+        let numero2 = Number(document.getElementById("n2").value)
+        let resultado = numero1 + numero2
+        alert(resultado)
+    }
+
+    function Subtrair() {
+        let numero1 = Number(document.getElementById("n1").value)
+        let numero2 = Number(document.getElementById("n2").value)
+        let resultado = numero1 - numero2
+        alert(resultado)
+    }
+    
+    function Multiplicar() {
+        let numero1 = Number(document.getElementById("n1").value)
+        let numero2 = Number(document.getElementById("n2").value)
+        let resultado = numero1 * numero2
+        alert(resultado)
+    }
+
+    function Dividir() {
+        let numero1 = Number(document.getElementById("n1").value)
+        let numero2 = Number(document.getElementById("n2").value)
+        let resultado = numero1 / numero2
+        alert(resultado)
     }
 </script>
+</body>
+</html>
