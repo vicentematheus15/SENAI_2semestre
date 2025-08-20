@@ -4,16 +4,27 @@
 }
 body{
     width: 100vw;
-    /* display: flex;
-    flex-direction: column; */
 }
 
 .cabecalho{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    padding: 1rem 0rem;
 }
 
 .main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 
+.main-numeros{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.main-botoes{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
