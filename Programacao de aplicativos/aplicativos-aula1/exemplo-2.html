@@ -51,11 +51,8 @@
         }
 
         function excluirUsuario(){
-            console.log(_listaDeUsuario)
             _listaDeUsuario.pop()
-            console.log(_listaDeUsuario)
             console.log("Último usuário excluído com sucesso!");
-            
             localStorage.setItem('usuarios', JSON.stringify(_listaDeUsuario))
         }
     </script>
