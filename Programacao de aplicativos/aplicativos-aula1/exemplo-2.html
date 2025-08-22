@@ -10,17 +10,37 @@
     <h1>Parametros</h1>
 
     <input type="text" id="nome" placeholder="Digite seu nome...">
-    
-    <button onclick="enviar()">Enviar</button>
+    <input type="text" id="senha" placeholder="Digite sua senha...">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="listaUsuarios()">Mostrar dados</button>
 
     <script>
-        function enviar(){
-            let nome = document.getElementById("nome").value
-            cadastrar(nome)
+    const _listaDeUsuario = [];
+
+        function cadastrar(){
+            const nome = String(document.getElementById("nome").value)
+            const senha = String(document.getElementById("senha").value)
+
+            for(const index in _listaDeUsuario){
+                const usuario = _listaDeUsuario[index]
+            }
+
+            const obj = {
+                nome: nome,
+                senha: senha
+            }
+
+            _listaDeUsuario.push(obj)
+            localStorage.setItem('usuarios', JSON.stringify(_listaDeUsuario))
+
+            console.log("Cadastro concluído!");
+            
         }
 
-        function cadastrar(nome){
-            alert(nome)
+        function listaUsuarios(){
+            const lista = JSON.parse(localStorage.getItem('usuarios'))
+            console.log(lista)
         }
     </script>
     
