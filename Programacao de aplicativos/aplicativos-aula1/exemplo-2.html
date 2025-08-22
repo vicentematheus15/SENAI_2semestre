@@ -13,6 +13,7 @@
     <input type="text" id="senha" placeholder="Digite sua senha...">
 
     <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="excluirUsuario()">Excluir último usuário</button>
     <button onclick="listaUsuarios()">Mostrar dados</button>
 
     <script>
@@ -50,7 +51,9 @@
         }
 
         function excluirUsuario(){
-            
+            console.log(_listaDeUsuario)
+            _listaDeUsuario.pop()
+            console.log(_listaDeUsuario)
         }
     </script>
     
