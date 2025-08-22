@@ -22,18 +22,23 @@
             const nome = String(document.getElementById("nome").value)
             const senha = String(document.getElementById("senha").value)
 
+            const usuariosSalvos = JSON.parse(localStorage.getItem('usuarios')) || [] 
+            
             for(const index in _listaDeUsuario){
-                const usuario = _listaDeUsuario[index]
+                if(usuariosSalvos[index].nome === nome){
+                    alert("Usuário já cadastrado!")
+                    return
+                }
             }
-
+            
             const obj = {
                 nome: nome,
                 senha: senha
             }
 
             _listaDeUsuario.push(obj)
-            localStorage.setItem('usuarios', JSON.stringify(_listaDeUsuario))
 
+            localStorage.setItem('usuarios', JSON.stringify(_listaDeUsuario))
             console.log("Cadastro concluído!");
             
         }
