@@ -54,6 +54,7 @@
 //exclui da array o último objeto (usuario) que foi adicionado
             _listaDeUsuario.pop()
             console.log("Último usuário excluído com sucesso!");
+//armazena a nova array com o ultimo item excluido no localStorage
             localStorage.setItem('usuarios', JSON.stringify(_listaDeUsuario))
         }
     </script>
