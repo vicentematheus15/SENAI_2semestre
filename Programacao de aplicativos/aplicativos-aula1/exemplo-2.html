@@ -26,11 +26,16 @@
     const _listaDeUsuario = [];
 
     function mostrarLista(){
+        const lista = JSON.parse(localStorage.getItem('usuarios'))
+        console.log("1");
+        
         if(_listaDeUsuario.length === 0){
+            console.log("2")
             return
         }else{
+            console.log("3")
             _listaDeUsuario.forEach(usuario => {
-                const listaDeUsuariosCadastrados = document.getElementById("listaCadastrados").value
+                let listaDeUsuariosCadastrados = document.getElementById("listaCadastrados").value
                 listaDeUsuariosCadastrados = ""
             })
         }
@@ -59,7 +64,7 @@
 //manda a nova array para o local storage
             localStorage.setItem('usuarios', JSON.stringify(_listaDeUsuario))
             console.log("Cadastro concluído!");
-            
+            mostrarLista()
         }
 
     function listaUsuarios(){
