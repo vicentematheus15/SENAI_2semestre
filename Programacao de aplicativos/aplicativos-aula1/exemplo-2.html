@@ -19,7 +19,8 @@
     <script>
     const _listaDeUsuario = [];
 
-        function cadastrar(){
+
+    function cadastrar(){
             const nome = String(document.getElementById("nome").value)
             const senha = String(document.getElementById("senha").value)
 //a variavel criada recebe os objetos do local storage. se não houver nada, recebe uma array vazia
@@ -45,13 +46,13 @@
             
         }
 
-        function listaUsuarios(){
+    function listaUsuarios(){
 //funcao apenas para mostrar no console como está a array de usuarios do local storage no console
             const lista = JSON.parse(localStorage.getItem('usuarios'))
             console.log(lista)
         }
 
-        function excluirUsuario(){
+    function excluirUsuario(){
 //exclui da array o último objeto (usuario) que foi adicionado
             _listaDeUsuario.pop()
             console.log("Último usuário excluído com sucesso!");
