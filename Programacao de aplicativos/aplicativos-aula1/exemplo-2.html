@@ -29,14 +29,18 @@
     function mostrarLista(){
         const lista = JSON.parse(localStorage.getItem('usuarios'))
         console.log("1");
-        let listaDeUsuariosCadastrados = document.getElementById("listaCadastrados").value
+        console.log(_listaDeUsuario);
+        
         
         if(_listaDeUsuario.length === 0){
             console.log("2")
+            console.log(_listaDeUsuario)
             return
         }else{
             console.log("3")
-            listaDeUsuariosCadastrados = ""
+            let listaDeUsuariosCadastrados = document.getElementById("listaCadastrados").value
+            listaDeUsuariosCadastrados = lista
+            listaDeUsuariosCadastrados.document.createElement('div')
             _listaDeUsuario.forEach(usuario => {
             })
         }
