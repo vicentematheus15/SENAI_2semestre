@@ -1,0 +1,38 @@
+<h1>FOR IN</h1>
+
+<input type="text" id="nome" placeholder="Digite seu nome...">
+<input type="text" id="senha" placeholder="Digite sua senha...">
+
+<button onclick="cadastrar()">
+    Cadastrar
+</button>
+
+<script>
+     const _listaDeUsuarios = [];
+
+    function cadastrar() {
+        const nome = String(document.getElementById('nome').value);
+        const senha = String(document.getElementById('senha').value);
+
+        let isValid = true;
+        for (const index in _listaDeUsuarios) {
+            let usuario = _listaDeUsuarios[index];
+            if (usuario.nome === nome) {
+                isValid = false;
+                alert('Po Ja tem um cara com esse nome');
+                return
+            }
+        }
+
+        if (isValid) {
+            const obj = {
+                nome: nome,
+                senha: senha
+            }
+
+            _listaDeUsuarios.push(obj);
+            localStorage.setItem('usuarios', JSON.stringify(_listaDeUsuarios))
+            console.log('Cadastro concluido!');
+        }
+    }
+</script>
