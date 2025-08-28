@@ -49,3 +49,7 @@ function verificaNoBanco(nome, senha){
     }
     return false
 }
+
+function voltarParaCadastro(){
+    window.location.href = './cadastro-login.html'
+}
