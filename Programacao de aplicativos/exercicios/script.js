@@ -1,9 +1,12 @@
 let _usuariosAutenticados = []
 
-function cadastrar(){
-    const nome = document.getElementById("nomeCadastro").value
-    const senha = document.getElementById("senhaCadastro").value
+function pegarDados(){
+    const nome = String(document.getElementById("nomeCadastro").value)
+    const senha = String(document.getElementById("senhaCadastro").value)
+}
 
+function cadastrar(){
+    pegarDados(nome, senha)
     let isValid = true
     if(isValid){
         const obj = {
@@ -14,15 +17,21 @@ function cadastrar(){
     alert("Cadastro concluído com sucesso")            
     localStorage.setItem("usuariosAutenticados", JSON.stringify(_usuariosAutenticados))
     }
+    console.log(_usuariosAutenticados);
 }
         
 function login(){
-    localStorage.getItem(JSON.parse(_usuariosAutenticados))
+    pegarDados(nome, senha)
+    JSON.parse(localStorage.getItem("usuariosAutenticados"))
 
     for(index in _usuariosAutenticados){
+        
         let usuarioAutenticado = _usuariosAutenticados[index]
         if(usuarioAutenticado.nome === nome && usuarioAutenticado.senha === senha){
             alert("Usuário autenticado")
+            return 
+        }else{
+            return alert("Usuário ou senha inválidos")
         }
     }
 }
