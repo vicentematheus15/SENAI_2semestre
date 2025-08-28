@@ -23,7 +23,6 @@ function cadastrar(){
     alert("Cadastro concluído com sucesso")            
     localStorage.setItem("usuariosAutenticados", JSON.stringify(_usuariosAutenticados))
     }
-    console.log(_usuariosAutenticados);
 }
         
 function login(){
