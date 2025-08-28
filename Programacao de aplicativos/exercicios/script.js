@@ -1,10 +1,19 @@
 let _usuariosAutenticados = []
 
 function cadastrar(){
-    const nome = String(document.getElementById("nomeCadastro").value)
-    const senha = String(document.getElementById("senhaCadastro").value)
+    const nome = String(document.getElementById("nome").value)
+    const senha = String(document.getElementById("senha").value)
 
     let isValid = true
+    for(const index in _usuariosAutenticados){
+        let usuario = _usuariosAutenticados[index]
+        if(usuario.nome === nome) {
+            isValid = false
+            alert("Nome de usuário já cadastrado")
+            return
+        }
+    }
+    
     if(isValid){
         const obj = {
             nome: nome,
@@ -18,18 +27,28 @@ function cadastrar(){
 }
         
 function login(){
-    const nome = String(document.getElementById("nomeLogin").value)
-    const senha = String(document.getElementById("senhaLogin").value)
+    const nome = String(document.getElementById("nome").value)
+    const senha = String(document.getElementById("senha").value)
+    
+    let isValid = verificaNoBanco(nome, senha)
 
-    const lista = JSON.parse(localStorage.getItem("usuariosAutenticados"))
+    if(isValid){
+        alert("Usuário autenticado")
+    }else{
+        alert("Usuário ou senha inválidos")
+    }
+}
 
-    for(const index in lista){
-        let usuarioAutenticado = lista[index]
+function verificaNoBanco(nome, senha){
+    const listaUsuariosBanco = JSON.parse(localStorage.getItem("usuariosAutenticados"))
+    let isValid = false
+    for(const index in listaUsuariosBanco){
+        let usuarioAutenticado = listaUsuariosBanco[index]
         if(usuarioAutenticado.nome === nome && usuarioAutenticado.senha === senha){
-            alert("Usuário autenticado")
-            return
+            isValid = true
+            return isValid
         }else{
-            return alert("Usuário ou senha inválidos")
+            return false
         }
     }
 }
