@@ -5,7 +5,7 @@ function cadastrar(){
     const senha = String(document.getElementById("senha").value)
 
     let isValid = true
-    for(const index in _usuariosAutenticados){
+    for(let index in _usuariosAutenticados){
         let usuario = _usuariosAutenticados[index]
         if(usuario.nome === nome) {
             isValid = false
@@ -40,12 +40,11 @@ function login(){
 
 function verificaNoBanco(nome, senha){
     const listaUsuariosBanco = JSON.parse(localStorage.getItem("usuariosAutenticados"))
-    let isValid = false
-    for(const index in listaUsuariosBanco){
+
+    for(let index in listaUsuariosBanco){
         let usuarioAutenticado = listaUsuariosBanco[index]
         if(usuarioAutenticado.nome === nome && usuarioAutenticado.senha === senha){
-            isValid = true
-            return isValid
+            return true
         }else{
             return false
         }
