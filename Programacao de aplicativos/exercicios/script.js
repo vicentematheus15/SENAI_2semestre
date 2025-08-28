@@ -21,15 +21,15 @@ function cadastrar(){
         
 function login(){
     const nome = String(document.getElementById("nomeLogin").value)
-    const senha = String(document.getElementById("senhaLogin").value)    
-    JSON.parse(localStorage.getItem("usuariosAutenticados"))
+    const senha = String(document.getElementById("senhaLogin").value)
 
-    for(index in _usuariosAutenticados){
-        
-        let usuarioAutenticado = _usuariosAutenticados[index]
+    const lista = JSON.parse(localStorage.getItem("usuariosAutenticados"))
+
+    for(const index in lista){
+        let usuarioAutenticado = lista[index]
         if(usuarioAutenticado.nome === nome && usuarioAutenticado.senha === senha){
             alert("Usuário autenticado")
-            return 
+            return
         }else{
             return alert("Usuário ou senha inválidos")
         }
