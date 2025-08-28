@@ -1,45 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Cadastro e login</title>
+    <script src="script.js"></script>
 </head>
 <body>
     <h1>Cadastro</h1>
-    <br><br>
-    <input type="text" id="nomeUsuario" placeholder="Digite o seu nome">
-    <input type="text" id="senhaUsuario" placeholder="Digite a su senha">
+    
+    <input type="text" id="nomeCadastro" placeholder="Digite o seu nome">
+    <input type="text" id="senhaCadastro" placeholder="Digite a sua senha">
     <button onclick="cadastrar()">Cadastro</button>
-<script>
-    let _usuariosAutenticados = []
-
-    function cadastrar(){
-        const nome = document.getElementById("nomeUsuario").value
-        const senha = document.getElementById("senhaUsuario").value
-
-        let isValid = true
-        if(isValid){
-            const obj = {
-                nome: nome,
-                senha: senha
-            }
-            _usuariosAutenticados.push(obj)
-            alert("Cadastro concluído com sucesso")
-        }
-        
-
-        for(index in _usuariosAutenticados){
-            let usuarioAutenticado = _usuariosAutenticados[index]
-            if(usuarioAutenticado.nome === nome){
-                alert
-            }
-        }
-
-
-
-
-    }
-</script>
+    <br><br><br>
+    <h1>Login</h1>
+    
+    <input type="text" id="nomeLogin" placeholder="Digite o seu nome">
+    <input type="text" id="senhaLogin" placeholder="Digite a sua senha">
+    <button onclick="login()">Login</button>
 </body>
 </html>
