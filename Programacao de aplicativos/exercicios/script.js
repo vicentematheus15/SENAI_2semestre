@@ -45,8 +45,7 @@ function verificaNoBanco(nome, senha){
         let usuarioAutenticado = listaUsuariosBanco[index]
         if(usuarioAutenticado.nome === nome && usuarioAutenticado.senha === senha){
             return true
-        }else{
-            return false
         }
     }
+    return false
 }
