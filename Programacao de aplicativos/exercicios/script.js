@@ -32,7 +32,7 @@ function login(){
     let isValid = verificaNoBanco(nome, senha)
 
     if(isValid){
-        alert("Usuário autenticado")
+        window.location.href = './home.html'
     }else{
         alert("Usuário ou senha inválidos")
     }
