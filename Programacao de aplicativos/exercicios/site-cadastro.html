@@ -12,14 +12,28 @@
     <input type="text" id="senhaUsuario" placeholder="Digite a su senha">
     <button onclick="cadastrar()">Cadastro</button>
 <script>
-    let _listaUsuarios = []
+    let _usuariosAutenticados = []
 
     function cadastrar(){
         const nome = document.getElementById("nomeUsuario").value
         const senha = document.getElementById("senhaUsuario").value
 
-        for(index in _listaUsuarios){
+        let isValid = true
+        if(isValid){
+            const obj = {
+                nome: nome,
+                senha: senha
+            }
+            _usuariosAutenticados.push(obj)
+            alert("Cadastro concluído com sucesso")
+        }
+        
 
+        for(index in _usuariosAutenticados){
+            let usuarioAutenticado = _usuariosAutenticados[index]
+            if(usuarioAutenticado.nome === nome){
+                alert
+            }
         }
 
 
