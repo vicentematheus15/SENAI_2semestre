@@ -1,12 +1,11 @@
 let _usuariosAutenticados = []
 
-function pegarDados(){
-    const nome = String(document.getElementById("nomeCadastro").value)
-    const senha = String(document.getElementById("senhaCadastro").value)
-}
+
 
 function cadastrar(){
-    pegarDados(nome, senha)
+    const nome = String(document.getElementById("nomeCadastro").value)
+    const senha = String(document.getElementById("senhaCadastro").value)
+
     let isValid = true
     if(isValid){
         const obj = {
@@ -21,7 +20,8 @@ function cadastrar(){
 }
         
 function login(){
-    pegarDados(nome, senha)
+    const nome = String(document.getElementById("nomeLogin").value)
+    const senha = String(document.getElementById("senhaLogin").value)    
     JSON.parse(localStorage.getItem("usuariosAutenticados"))
 
     for(index in _usuariosAutenticados){
