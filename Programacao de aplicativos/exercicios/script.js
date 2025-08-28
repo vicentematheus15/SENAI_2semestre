@@ -1,7 +1,5 @@
 let _usuariosAutenticados = []
 
-
-
 function cadastrar(){
     const nome = String(document.getElementById("nomeCadastro").value)
     const senha = String(document.getElementById("senhaCadastro").value)
