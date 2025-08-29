@@ -8,30 +8,47 @@
 </button>
 
 <script>
-     const _listaDeUsuarios = [];
+    // Criação de uma lista (array) vazia para armazenar os usuários cadastrados
+    const _listaDeUsuarios = [];
 
+    // Função chamada quando o botão é clicado
     function cadastrar() {
+        // Pega o valor digitado no input com id "nome" e converte para string
         const nome = String(document.getElementById('nome').value);
+
+        // Pega o valor digitado no input com id "senha" e converte para string
         const senha = String(document.getElementById('senha').value);
 
+        // Variável que indica se o cadastro pode ser feito (true = pode, false = não pode)
         let isValid = true;
+
+        // Loop for...in percorre os índices do array _listaDeUsuarios
         for (const index in _listaDeUsuarios) {
+            // Para cada índice, recupera o objeto usuário correspondente
             let usuario = _listaDeUsuarios[index];
+
+            // Verifica se o nome digitado já existe na lista
             if (usuario.nome === nome) {
-                isValid = false;
-                alert('Po Ja tem um cara com esse nome');
-                return
+                isValid = false; // invalida o cadastro
+                alert('Po Ja tem um cara com esse nome'); // alerta o usuário
+                return // interrompe a função para não cadastrar duplicado
             }
         }
 
+        // Se o nome for válido (não duplicado), cria o objeto do usuário
         if (isValid) {
             const obj = {
-                nome: nome,
-                senha: senha
+                nome: nome, // chave nome recebe o valor do input
+                senha: senha // chave senha recebe o valor do input
             }
 
+            // Adiciona o objeto criado ao array de usuários
             _listaDeUsuarios.push(obj);
+
+            // Salva o array atualizado no localStorage (armazenamento do navegador)
             localStorage.setItem('usuarios', JSON.stringify(_listaDeUsuarios))
+
+            // Apenas mostra no console que deu certo
             console.log('Cadastro concluido!');
         }
     }
