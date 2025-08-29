@@ -50,6 +50,6 @@ function verificaNoBanco(nome, senha){
     return false
 }
 
-function voltarParaCadastro(){
-    window.location.href = './cadastro-login.html'
+async function perguntar(){
+    let apiKey = 'AIzaSyAfSv6vU1KhdLkot5MT0mLw5j4Hzs6L5os'
 }
