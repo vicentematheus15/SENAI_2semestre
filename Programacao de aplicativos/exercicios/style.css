@@ -8,7 +8,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: rgb(32, 0, 238);
     border-bottom: 1px solid red;
     margin-bottom: 15px;
     cursor: pointer;
@@ -17,5 +16,4 @@
 .conteudo {
     display: flex;
     justify-content: center;
-    color: chocolate;
 }
