@@ -52,4 +52,27 @@ function verificaNoBanco(nome, senha){
 
 async function perguntar(){
     let apiKey = 'AIzaSyAfSv6vU1KhdLkot5MT0mLw5j4Hzs6L5os'
+    let url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`
+    const prompt = document.getElementById('prompt').value
+
+    let resposta = await fetch(url,{
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            "contents": [
+              {
+                "parts": [
+                  {
+                    "text": prompt
+                  }
+                ]
+              }
+            ]
+          })
+    });
+
+    const info = await resposta.json();
+    const text = info.candidates[0].content.parts[0].text
+    alert(text)
+    console.log(info)
 }
