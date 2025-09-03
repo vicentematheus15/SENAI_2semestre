@@ -1,49 +1,44 @@
-1. Variáveis: Escopo, Tipos e Regras
-Variáveis são contêineres para armazenar valores de dados. Em JavaScript, a forma como declaramos uma variável impacta diretamente seu escopo e imutabilidade.
-Regras de Nomenclatura
+// 1. Variáveis: Escopo, Tipos e Regras
+// Variáveis são contêineres para armazenar valores de dados. Em JavaScript, a forma como declaramos uma variável impacta diretamente seu escopo e imutabilidade.
+// Regras de Nomenclatura
 
-•	Sem Espaços: Nomes de variáveis não podem conter espaços. Para separar palavras, utilize a convenção camelCase (Explicado em baixo)
+// •	Sem Espaços: Nomes de variáveis não podem conter espaços. Para separar palavras, utilize a convenção camelCase (Explicado em baixo)
 
-•	Nomes são sensíveis a maiúsculas e minúsculas (minhaVar é diferente de minhavar).
+// •	Nomes são sensíveis a maiúsculas e minúsculas (minhaVar é diferente de minhavar).
 
-•	Use camelCase por convenção (ex: minhaPrimeiraVariavel).
-
-
+// •	Use camelCase por convenção (ex: minhaPrimeiraVariavel).
 
 
 
 
 
+// 2. Estruturas Condicionais: if, else, switch
+// São usadas para momentos onde precisamos de uma verificação de algo formando uma divisão no código, se a condição no if for verdadeira o compilador entrará na opção if e se for falsa no else, existe a possibilidade de criar um else if também que possibilita mais verificações aqui está um exemplo:
 
+// OBS: A condição é o que fica entre parênteses. Podemos interpretar essa parte como uma pergunta que retorna sim ou não.
 
-
-2. Estruturas Condicionais: if, else, switch
-São usadas para momentos onde precisamos de uma verificação de algo formando uma divisão no código, se a condição no if for verdadeira o compilador entrará na opção if e se for falsa no else, existe a possibilidade de criar um else if também que possibilita mais verificações aqui está um exemplo:
-
-OBS: A condição é o que fica entre parênteses. Podemos interpretar essa parte como uma pergunta que retorna sim ou não.
-
-const hora = 14;
+// const hora = 14;
  
-let isValid = hora < 12
+// let isValid = hora < 12
  
-if (isValid) {
-  console.log("Bom dia!");
-} else if (hora < 18) {
-  console.log("Boa tarde!");
-} else {
-  console.log("Boa noite!");	
-}
-// Saída: Boa tarde!
+// if (isValid) {
+//   console.log("Bom dia!");
+// } else if (hora < 18) {
+//   console.log("Boa tarde!");
+// } else {
+//   console.log("Boa noite!");	
+// }
+// // Saída: Boa tarde!
 
-Switch
-Let aluno = 18
-Switch(aluno){
-	Case 12:
-		Alert(“de menor”)
-		break
-}
-	Case 18:
-		Alert(“de maior”)
-Break
-	Default:
-		Alert(“Idade inválida”)
+// Switch
+// Let aluno = 18
+// Switch(aluno){
+// 	Case 12:
+// 		Alert(“de menor”)
+// 		break
+// }
+// 	Case 18:
+// 		Alert(“de maior”)
+// Break
+// 	Default:
+// 		Alert(“Idade inválida”)
