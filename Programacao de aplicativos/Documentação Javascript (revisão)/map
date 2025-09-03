@@ -1,0 +1,8 @@
+// Map()
+
+// Let números = [1, 2, 3];
+// Let númerosDobrados = números.map( numero => numero * 2)
+// (“numero” é um nome qualquer para cada elemento da arrray)
+
+// O resultado de números é: [1, 2, 3];
+// O resultado de númerosDobrados é: [2, 4, 6];
