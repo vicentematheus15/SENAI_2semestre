@@ -1,0 +1,4 @@
+// _listaDeUsuarios.slice(index, 1)
+
+// Irá deletar 1 item a partir da posição index
+// O slice recebe um start e um end para fazer o corte em um array
