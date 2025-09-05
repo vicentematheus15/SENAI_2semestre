@@ -29,7 +29,31 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Text>
+        Calculadora
+      </Text>
 
+      <TextInput placeholder='Primeiro número'
+        style={styles.input} onChangeText={setPrimeiroNumero}
+      ></TextInput>
+
+      <TextInput placeholder='Segundo número'
+        style={styles.input} onChangeText={setSegundoNumero}
+      ></TextInput>
+    <View style={styles.button}>
+
+      <Button onPress={soma} title='+'></Button>
+
+      <Button onPress={subtracao} title='–'></Button>
+
+      <Button onPress={multiplicacao} title='×'></Button>
+
+      <Button onPress={divisao} title='÷'></Button>
+    </View>
+
+      <Text style={styles.result}>
+        {resultado}
+      </Text>
 
       <StatusBar style="auto" />
     </View>
