@@ -61,5 +61,25 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  input: {
+    padding: 12,
+    margin: 5, 
+    backgroundColor: '#888'
+  },
+  button: {
+    flexDirection: 'row',
+    gap: 5
+  },
+  result: {
+    margin: 10,
+    padding: 12,
+    backgroundColor: '#444',
+    fontWeight: 'bold'
+  }
 });
