@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>
+      <Text style={styles.titulo} >
         Calculadora
       </Text>
 
@@ -66,6 +66,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  titulo: {
+    fontWeight: 'bold'
   },
   input: {
     padding: 12,
