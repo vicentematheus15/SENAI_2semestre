@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native'; //as tags tem que ser importadas antes de usar
 import { useState } from 'react';
 
 //aqui ficam as funcoes e variáveis do app
