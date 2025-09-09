@@ -29,6 +29,7 @@ export default function App() {
   }
 
   return (
+//aqui vao as tags
     <View style={styles.container}>
       <Text style={styles.titulo} >
         Calculadora
