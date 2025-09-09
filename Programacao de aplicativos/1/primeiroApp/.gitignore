@@ -1,5 +1,5 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
+#Aqui coloco os arquivos específicos ou pastas que não devem ir para o github, colocando um ponto "." e o nome do arquivo/pasta
 # dependencies
 node_modules/
 
