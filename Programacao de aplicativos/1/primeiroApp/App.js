@@ -61,7 +61,7 @@ export default function App() {
     </View>
   );
 }
-
+//aqui vao os styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
