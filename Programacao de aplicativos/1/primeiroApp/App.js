@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import { useState } from 'react';
 
+//aqui ficam as funcoes e variáveis do app
 export default function App() {
   const [primeiroNumero, setPrimeiroNumero] = useState(0);
   const [segundoNumero, setSegundoNumero] = useState(0);
