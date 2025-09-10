@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 //aqui ficam as funcoes e variáveis do app
 export default function App() {
-  // useState faz com que a variavel que aparece na tela sempre seja atualizada, não precisando utilizar comandos para mostrar na tela apos alguma alteração no valor
+// useState faz com que a variavel que aparece na tela sempre seja atualizada, não precisando utilizar comandos para mostrar na tela apos alguma alteração no valor
   const [primeiroNumero, setPrimeiroNumero] = useState(0);
   const [segundoNumero, setSegundoNumero] = useState(0);
   const [resultado, setResultado] = useState(0);
