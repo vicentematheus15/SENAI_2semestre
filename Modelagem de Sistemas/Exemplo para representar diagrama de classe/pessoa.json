@@ -1,0 +1,23 @@
+{
+    "nome" : "Gustavo",
+    "idade" : 25,
+    "altura" : 1.75,
+    "enderecos" : [
+        {
+            "rua" : "geral",
+            "cep" : 54654,
+            "estado" : {
+                "nome" : "Santa catarina",
+                "sigla" : "SC"
+            }
+        },
+        {
+            "rua" : "santa maria",
+            "cep" : 54654,
+            "estado" : {
+                "nome" : "Santa catarina",
+                "sigla" : "SC"
+            }
+        }
+    ]
+}

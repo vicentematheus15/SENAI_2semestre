@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Parametros</h1>
+
+    <input type="text" id="nome" placeholder="Digite seu nome..." />
+    <input type="text" id="senha" placeholder="Digite sua senha..." />
+
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="excluirUsuario()">Excluir último usuário</button>
+    <button onclick="listaUsuarios()">Mostrar dados</button>
+
+    <div id="listaCadastrados">
+      <ul>
+        <li>Lista de usuários cadastrados</li>
+      </ul>
+    </div>
+
+    <script>
+      const _listaDeUsuario = [];
+      mostrarLista();
+
+      function cadastrar() {
+        const nome = String(document.getElementById("nome").value);
+        const senha = String(document.getElementById("senha").value);
+        //a variavel criada recebe os objetos do local storage. se não houver nada, recebe uma array vazia
+        const usuariosSalvos = JSON.parse(localStorage.getItem("usuarios")) || [];
+        //o loop se repete para cada index da array _listaDeUsuarios
+        for (const index in _listaDeUsuario) {
+          //percorre a array de usuariosSalvos em cada "[index]" e cada ".nome" e verifica se é igual ao nome que está sendo cadastrado agora (salvo na variável "nome" da linha 22). Se for igual, da um alert e retorna, quebrando parando a função
+          if (usuariosSalvos[index].nome === nome) {
+            alert("Usuário já cadastrado!");
+            return;
+          }
+        }
+        //se não for igual a algum nome existente, segue a função, criando um novo objeto com o nome e senha digitados
+        const obj = {
+          nome: nome,
+          senha: senha,
+        };
+        //coloca o objeto criado na array _listaDeUsuarios
+        _listaDeUsuario.push(obj);
+        //manda a nova array para o local storage
+        localStorage.setItem("usuarios", JSON.stringify(_listaDeUsuario));
+        console.log("Cadastro concluído!");
+      }
+
+      function listaUsuarios() {
+        //funcao apenas para mostrar no console como está a array de usuarios do local storage no console
+        const lista = JSON.parse(localStorage.getItem("usuarios"));
+        console.log(lista);
+      }
+
+      function excluirUsuario() {
+        //exclui da array o último objeto (usuario) que foi adicionado
+        _listaDeUsuario.pop();
+        console.log("Último usuário excluído com sucesso!");
+        //armazena a nova array com o ultimo item excluido no localStorage
+        localStorage.setItem("usuarios", JSON.stringify(_listaDeUsuario));
+      }
+      // function listaVazia(){
+      //     if(_listaDeUsuario.length === 0){
+      //         console.log("2")
+      //         console.log(_listaDeUsuario)
+      //         return
+      //     }else{
+      //         mostrarLista()
+      //     }
+      // }
+
+      // function mostrarLista(){
+      //     const lista = JSON.parse(localStorage.getItem('usuarios'))
+      //     console.log(_listaDeUsuario);
+
+      //     console.log("3")
+      //     let listaDeUsuariosCadastrados = document.getElementById("listaCadastrados").innerText
+      //     listaDeUsuariosCadastrados = "1"
+      //     _listaDeUsuario.forEach(usuario => {
+      //     })
+      // }
+    </script>
+  </body>
+</html>

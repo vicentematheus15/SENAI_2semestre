@@ -1,0 +1,12 @@
+// For-in
+// A variável nome é o nome que o usuário está tentando cadastrar
+// A variável _listadeUsuarios é a lista de usuários cadastrados
+// for (const index in _listaDeUsuario) {
+// 		let usuário = _listaDeUsuarios[index]
+//          	 	if (usuario.nome === nome) {
+// 			isValid = false
+//            			alert("Usuário já cadastrado!");
+//             		return;
+// 		//return cancela o looping do for
+// 		}
+// 	}
