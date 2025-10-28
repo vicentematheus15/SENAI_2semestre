@@ -1,10 +1,11 @@
 //é um modelo que define um objeto e as caracteristicas dele
 class Pessoa {
-    constructor(nome, idade){
+    //atributos
+    constructor(nome, idade){    
         this.nome = nome;
         this.idade = idade;
     }
-
+    //métodos
     falar(){
         console.log(`Olá, meu nome é ${this.nome}`)
     }
