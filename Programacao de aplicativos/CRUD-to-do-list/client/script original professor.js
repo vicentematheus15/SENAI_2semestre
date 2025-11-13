@@ -18,7 +18,7 @@
 
         // Inicialização
         loadTasks();//CARREGA TASKS DO COOKIES
-        updateStats();//ATUALIZA OS NUMEROS DE COMPLETSO E PENDENTES ETC
+        updateStats();//ATUALIZA OS NUMEROS DE COMPLETOS E PENDENTES ETC
         renderTasks();
 
         // Event Listeners
