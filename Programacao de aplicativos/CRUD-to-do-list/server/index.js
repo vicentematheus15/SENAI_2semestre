@@ -1,3 +1,4 @@
+//definindo mysql como base de dados
 const express = require("express");
 const app = express();
 const mysql2 = require("mysql2");
@@ -6,7 +7,7 @@ app.use(cors());
 app.use(express.json())
 
 
-
+//cria a conexão com o banco de dados
 const db = mysql2.createConnection({
     host:"127.0.0.1",
     user:"root",
@@ -14,11 +15,14 @@ const db = mysql2.createConnection({
     database:"to_do_list_app",
     port:3306
 });
-
+//formata a sintaxe da data no mysql
 function formatDateForMySQL(dateString) {
     const date = new Date(dateString);
     return date.toISOString().slice(0, 19).replace('T', ' ');
 }
+
+//GET POST PUT DELETE
+
 
 app.get("/",(req,res)=>{
     res.json({status:200})
@@ -33,7 +37,7 @@ app.get("/pegarTask",(req,res)=>{
         }
     })
 })
-
+//
 app.post("/criar",(req,res)=>{
     const title = req.body.title
     const description = req.body.description
