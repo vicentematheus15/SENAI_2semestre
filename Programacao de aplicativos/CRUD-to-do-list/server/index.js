@@ -25,20 +25,25 @@ function formatDateForMySQL(dateString) {
 
 //método GET 
 //faz a requisicao (req) para buscar uma tarefa no banco e espera uma resposta (res)
+
+//define a rota(route)
 app.get("/",(req,res)=>{
     res.json({status:200})
 })
 
+//(model e controller) - o model define qual será a interação com o banco "SELECT.." e o controller da a resposta por meio do código que mostra se deu erro ou se deu certo (200, 201, 500, 404, 401, cada codigo tem um significado)
 app.get("/pegarTask",(req,res)=>{
-    db.query('SELECT * FROM task',(err,result)=>{
-        if(err){
+    db.query('SELECT * FROM task',(err,result)=>{                                             
+        if(err){                                                                                  
             res.status(500).json({message:"Erro no servidor", error:err})}
         else{
             res.status(200).json({message:"Tarefas buscadas com sucesso", tasks:result})
         }
     })
 })
-//
+
+//metodo POST
+//define cada parte do corpo do método
 app.post("/criar",(req,res)=>{
     const title = req.body.title
     const description = req.body.description
