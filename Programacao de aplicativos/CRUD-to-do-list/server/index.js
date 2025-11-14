@@ -43,7 +43,7 @@ app.get("/pegarTask",(req,res)=>{
 })
 
 //metodo POST
-//define cada parte do corpo do método
+//cria constantes que vão receber os atributos do objeto (task) que estão do body da requisição
 app.post("/criar",(req,res)=>{
     const title = req.body.title
     const description = req.body.description
@@ -51,7 +51,9 @@ app.post("/criar",(req,res)=>{
     const completed = req.body.completed
     const createdAt = formatDateForMySQL(req.body.createdAt);
 
+    //model: faz a query para inserir os atributos da task no banco de dados
     db.query('INSERT INTO task (title,description,priority,completed,createdAt) VALUES (?,?,?,?,?)',[title,description,priority,completed,createdAt],(err,result)=>{
+        //controller: retorna a resposta para a requisição post com o código (500, 201)
         if(err){
             res.status(500).json({message:"Erro no servidor", error:err})
             console.log("erro no servidor",err)
