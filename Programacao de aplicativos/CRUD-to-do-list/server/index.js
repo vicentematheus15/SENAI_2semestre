@@ -23,7 +23,8 @@ function formatDateForMySQL(dateString) {
 
 //GET POST PUT DELETE
 
-
+//método GET 
+//faz a requisicao (req) para buscar uma tarefa no banco e espera uma resposta (res)
 app.get("/",(req,res)=>{
     res.json({status:200})
 })
