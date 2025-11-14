@@ -71,7 +71,7 @@ app.post("/criar",(req,res)=>{
 })
 
 //metodo PUT
-//requisição para atualizar algo do objeto "task", PASSANDO O ID DA INSTANCIA ESPECIFICA QUE DEVE SER ALTERADO NO ?? e esperando uma resposta
+//requisição para atualizar algo do objeto "task", PASSANDO O ID DA INSTANCIA ESPECIFICA QUE DEVE SER ALTERADO COMO PARAMETRO e esperando uma resposta
 app.put("/atualizar/:id", (req, res) => {
     //cria constantes que vão receber os atributos do objeto (task) que estão do body da requisição
     const title = req.body.title;
@@ -99,7 +99,7 @@ app.put("/atualizar/:id", (req, res) => {
 })
 
 //metodo delete
-//requisição para deletar algo do objeto "task", PASSANDO O ID DA INSTANCIA ESPECIFICA QUE DEVE SER deletado NO ?? e esperando uma resposta
+//requisição para deletar algo do objeto "task", PASSANDO O ID DA INSTANCIA ESPECIFICA QUE DEVE SER DELETADO COMO PARAMETRO e esperando uma resposta
 app.delete("/deletar/:id",(req,res)=>{
     //cria uma const que recebe a requisição delete, o parametro que deve ser deletado e o ID de qual o objeto
     const id = req.params.id
