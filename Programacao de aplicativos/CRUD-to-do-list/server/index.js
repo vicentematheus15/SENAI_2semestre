@@ -71,7 +71,7 @@ app.post("/criar",(req,res)=>{
 })
 
 //metodo PUT
-//requisição para atualizar algo do objeto "task", PASSANDO O ID NA  DA INSTANCIA ESPECIFICA QUE DEVE SER ALTERADO e esperando uma resposta
+//requisição para atualizar algo do objeto "task", PASSANDO O ID DA INSTANCIA ESPECIFICA QUE DEVE SER ALTERADO NO ?? e esperando uma resposta
 app.put("/atualizar/:id", (req, res) => {
     //cria constantes que vão receber os atributos do objeto (task) que estão do body da requisição
     const title = req.body.title;
@@ -99,9 +99,13 @@ app.put("/atualizar/:id", (req, res) => {
 })
 
 //metodo delete
+//requisição para deletar algo do objeto "task", PASSANDO O ID DA INSTANCIA ESPECIFICA QUE DEVE SER deletado NO ?? e esperando uma resposta
 app.delete("/deletar/:id",(req,res)=>{
+    //cria uma const que recebe a requisição delete, o parametro que deve ser deletado e o ID de qual o objeto
     const id = req.params.id
+    //model: faz a query para deletar o atributo do objeto referente ao id da task no banco de dados
     db.query("DELETE FROM task WHERE id=?",[id],(err,result)=>{
+        //controller: retorna a resposta para a requisição put com o código (500, 404, 200)
         if(err){
             res.status(500).json({message:"Erro no servidor,verifique a resposta",error:err})
         }else if(result.affectedRows ===0){
