@@ -32,8 +32,12 @@ app.get("/",(req,res)=>{
 })
 
 //(model e controller) - o model define qual será a interação com o banco "SELECT.." e o controller da a resposta por meio do código que mostra se deu erro ou se deu certo (200, 201, 500, 404, 401, cada codigo tem um significado)
+
+//requisição para criar uma instancia do objeto "task", esperando uma resposta
 app.get("/pegarTask",(req,res)=>{
-    db.query('SELECT * FROM task',(err,result)=>{                                             
+    //model: faz a query para pegar os atributos da task no banco de dados esperando um erro ou um resultado
+    db.query('SELECT * FROM task',(err,result)=>{ 
+        //controller: retorna a resposta para a requisição com o código (500,200)                                            
         if(err){                                                                                  
             res.status(500).json({message:"Erro no servidor", error:err})}
         else{
@@ -43,8 +47,9 @@ app.get("/pegarTask",(req,res)=>{
 })
 
 //metodo POST
-//cria constantes que vão receber os atributos do objeto (task) que estão do body da requisição
+//requisição para criar uma instancia do objeto "task", esperando uma resposta
 app.post("/criar",(req,res)=>{
+    //cria constantes que vão receber os atributos do objeto (task) que estão do body da requisição
     const title = req.body.title
     const description = req.body.description
     const priority = req.body.priority
@@ -65,7 +70,10 @@ app.post("/criar",(req,res)=>{
     } )
 })
 
+//metodo PUT
+//requisição para atualizar algo do objeto "task", PASSANDO O ID NA  DA INSTANCIA ESPECIFICA QUE DEVE SER ALTERADO e esperando uma resposta
 app.put("/atualizar/:id", (req, res) => {
+    //cria constantes que vão receber os atributos do objeto (task) que estão do body da requisição
     const title = req.body.title;
     const description = req.body.description;
     const priority = req.body.priority;
@@ -73,10 +81,12 @@ app.put("/atualizar/:id", (req, res) => {
     const createdAt = req.body.createdAt ? formatDateForMySQL(req.body.createdAt) : null
     const id = req.params.id;
 
+    //model: faz a query para alterar o atributo do objeto referente ao id da task no banco de dados
     db.query(
         "UPDATE task SET title=?, description=?, priority=?, completed=?, createdAt=? WHERE id=?",
         [title, description, priority, completed, createdAt, id],
         (err, result) => {
+            //controller: retorna a resposta para a requisição put com o código (500, 404, 200)
             if (err) {
                 res.status(500).json({ message: "Erro no servidor, verifique a resposta", error: err,createdAt:createdAt});
             } else if (result.affectedRows === 0) {
@@ -88,6 +98,7 @@ app.put("/atualizar/:id", (req, res) => {
     );
 })
 
+//metodo delete
 app.delete("/deletar/:id",(req,res)=>{
     const id = req.params.id
     db.query("DELETE FROM task WHERE id=?",[id],(err,result)=>{
