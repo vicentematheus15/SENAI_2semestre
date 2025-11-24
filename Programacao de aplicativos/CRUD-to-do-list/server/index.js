@@ -1,7 +1,7 @@
 //definindo mysql como base de dados
 const express = require("express");
 const app = express();
-const mysql2 = require("mysql2");
+const mysql2 = require("mysql");
 const cors = require ("cors");
 app.use(cors());
 app.use(express.json())
